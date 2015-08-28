@@ -28,5 +28,6 @@ Quick start
 
 4. You can use it in your context processors or views.
 
-REQUIREMENTS
+Requirements
+------------
 django==1.6.5, feincms

@@ -18,6 +18,7 @@ setup(
     author='renkse',
     author_email='solomon_art@mail.ru',
     classifiers=[
+	'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
         'Framework :: Django',
         'Intended Audience :: Developers',
