@@ -9,7 +9,7 @@ from django.utils.translation import ugettext_lazy as _
 
 class Menu(MPTTModel):
     name = models.CharField(_('name'), max_length=255)
-    is_active = models.BooleanField(verbose_name='активное')
+    is_active = models.BooleanField(verbose_name='активное', default=True)
     slug = models.CharField(_('slug'), max_length=100, blank=True, help_text='Заполняйте это поле только в том случае,'
                                                                              ' если для данного пункта меню не '
                                                                              'выбрана информационная страница (например /page/).')
