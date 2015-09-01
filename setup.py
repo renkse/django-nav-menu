@@ -8,13 +8,14 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-nav-menu',
-    version='0.1',
+    version='0.1.1',
     packages=['menu'],
     include_package_data=True,
     license='BSD License',
     description='A Django app for creating the simplest menu trees in admin panel',
     long_description=README,
-    url='http://www.example.com/',
+    url='https://github.com/renkse/django-nav-menu',
+    download_url='https://github.com/renkse/django-nav-menu/tarball/0.1.1',
     author='renkse',
     author_email='solomon_art@mail.ru',
     classifiers=[
