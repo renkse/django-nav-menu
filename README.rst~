@@ -4,15 +4,14 @@ django-nav-menu
 
 django-nav-menu is a Django app for creating the simplest menu trees in admin panel.
 
-=====
+
 WARNING!!!
-=====
+-----------
 This app works only with django 1.6.5
 
 Quick start
 -----------
-
-1. You can install django-nav-menu through pip:
+1. You can install django-nav-menu through pip::
       pip install django-nav-menu
    or check out last version from github: https://github.com/renkse/django-nav-menu.git
 
