@@ -6,7 +6,7 @@ django-nav-menu is a Django app for creating the simplest menu trees in admin pa
 
 WARNING!!!
 -----------
-This app works only with django 1.6.5
+This app is tested only with django 1.6.5
 
 Quick start
 -----------
@@ -34,4 +34,4 @@ Quick start
 
 Requirements
 ------------
-django==1.6.5, feincms
+django==1.6.5, feincms, mptt>=0.6.0
