@@ -1,1 +1,1 @@
-__author__ = 'renkse'
+default_app_config = "menu.apps.MenuConfig"
