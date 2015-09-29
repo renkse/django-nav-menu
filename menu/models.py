@@ -3,8 +3,9 @@ __author__ = 'renkse'
 
 from mptt.models import MPTTModel, TreeForeignKey
 from django.db import models
-from django.contrib.flatpages.models import FlatPage
 from django.utils.translation import ugettext_lazy as _
+
+from menu.settings import NAV_MENU_FLATPAGE_MODEL
 
 
 class Menu(MPTTModel):
@@ -13,7 +14,7 @@ class Menu(MPTTModel):
     slug = models.CharField(_('slug'), max_length=100, blank=True, help_text='Заполняйте это поле только в том случае,'
                                                                              ' если для данного пункта меню не '
                                                                              'выбрана информационная страница (например /page/).')
-    page = models.ForeignKey(FlatPage, blank=True, null=True, related_name='page',
+    page = models.ForeignKey(NAV_MENU_FLATPAGE_MODEL, blank=True, null=True, related_name='page',
                              verbose_name='простая страница')
     parent = TreeForeignKey('self', null=True, blank=True, related_name='children', verbose_name='родительское меню')
 
