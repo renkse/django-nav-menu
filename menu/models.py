@@ -3,7 +3,6 @@ __author__ = 'renkse'
 
 from mptt.models import MPTTModel, TreeForeignKey
 from django.db import models
-from django.contrib.flatpages.models import FlatPage
 from django.utils.translation import ugettext_lazy as _
 
 from menu.settings import NAV_MENU_FLATPAGE_MODEL
