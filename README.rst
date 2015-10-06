@@ -16,14 +16,16 @@ Quick start
 
    or check out last version from github: https://github.com/renkse/django-nav-menu.git
 
-2. Add "menu", flatpages and sites to your INSTALLED_APPS setting like this::
+2. Add "menu", "mptt", "feincms", flatpages and sites to your INSTALLED_APPS setting like this::
 
-      INSTALLED_APPS = (
-          ...
-          'django.contrib.flatpages',
-    	  'django.contrib.sites',
-          'menu',
-      )
+    INSTALLED_APPS = (
+        ...
+        'django.contrib.flatpages',
+        'django.contrib.sites',
+        'mptt',
+        'feincms',
+        'menu',
+    )
 
 3. Run `python manage.py syncdb` to create the menu models.
 
