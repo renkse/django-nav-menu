@@ -16,7 +16,7 @@ class MenuAdmin(tree_editor.TreeEditor):
     list_display = ('name', 'is_active',)
     fieldsets = [
         (None,               {'fields': ['name', 'is_active', 'page', 'parent']}),
-        (_('URL (if no flat page is selected)'), {'fields': ['slug'], 'classes': ['collapse']}),
+        (_('URL (if no flat page is selected)'), {'fields': ['url'], 'classes': ['collapse']}),
     ]
 
 
