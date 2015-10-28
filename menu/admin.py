@@ -1,9 +1,11 @@
 # coding=utf-8
-__author__ = 'renkse'
+__authors__ = 'renkse, eternalfame'
 
 from django.contrib import admin
-from models import Menu
+from django.utils.translation import ugettext_lazy as _
 from feincms.admin import tree_editor
+
+from menu.models import Menu
 
 admin.autodiscover()
 
@@ -14,7 +16,7 @@ class MenuAdmin(tree_editor.TreeEditor):
     list_display = ('name', 'is_active',)
     fieldsets = [
         (None,               {'fields': ['name', 'is_active', 'page', 'parent']}),
-        ('Ссылка (если не выбрана информационная страница)', {'fields': ['slug'], 'classes': ['collapse']}),
+        (_('URL (if no flat page is selected)'), {'fields': ['slug'], 'classes': ['collapse']}),
     ]
 
 
