@@ -1,5 +1,5 @@
 # coding=utf-8
-__author__ = 'renkse'
+__authors__ = 'renkse, eternalfame'
 
 from mptt.models import MPTTModel, TreeForeignKey
 from django.db import models
@@ -10,13 +10,13 @@ from menu.settings import NAV_MENU_FLATPAGE_MODEL
 
 class Menu(MPTTModel):
     name = models.CharField(_('name'), max_length=255)
-    is_active = models.BooleanField(verbose_name='активное', default=True)
-    slug = models.CharField(_('slug'), max_length=100, blank=True, help_text='Заполняйте это поле только в том случае,'
-                                                                             ' если для данного пункта меню не '
-                                                                             'выбрана информационная страница (например /page/).')
-    page = models.ForeignKey(NAV_MENU_FLATPAGE_MODEL, blank=True, null=True, related_name='page',
-                             verbose_name='простая страница')
-    parent = TreeForeignKey('self', null=True, blank=True, related_name='children', verbose_name='родительское меню')
+    is_active = models.BooleanField(verbose_name=_('active'), default=True)
+    url = models.CharField(_('url'), max_length=100, blank=True, help_text=_('Example: /page/. This field should be '
+                                                                             'filled only if there is no flat page '
+                                                                             'associated with this menu instance.'))
+    page = models.ForeignKey(NAV_MENU_FLATPAGE_MODEL, blank=True, null=True, related_name='menus',
+                             verbose_name=_('flat page'))
+    parent = TreeForeignKey('self', null=True, blank=True, related_name='children', verbose_name=_('parent menu'))
 
     class Meta:
         verbose_name = u'меню'
@@ -24,6 +24,12 @@ class Menu(MPTTModel):
 
     def __unicode__(self):
         return self.name
+
+    @property
+    def slug(self):
+        from warnings import warn
+        warn('django_nav_menu.Menu slug attribute is deprecated', PendingDeprecationWarning)
+        return self.url
 
     def get_children(self):
         if hasattr(self, '_cached_children'):
@@ -38,5 +44,5 @@ class Menu(MPTTModel):
     def save(self, *args, **kwargs):
         # автозаполнение слага пункта меню по урлу из прикрепленной странички
         if self.page:
-            self.slug = self.page.url
+            self.url = self.page.url
         return super(Menu, self).save(*args, **kwargs)
