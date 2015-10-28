@@ -1,10 +1,10 @@
-=====
+===============
 django-nav-menu
-=====
+===============
 
 django-nav-menu is a Django app for creating the simplest menu trees in admin panel.
 
-WARNING!!!
+WARNING!!!!
 -----------
 This app is tested only with Django >= 1.6.5
 
