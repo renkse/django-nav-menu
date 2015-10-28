@@ -30,5 +30,5 @@ setup(
         'Programming Language :: Python :: 2.7',
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
-    ], requires=["django", 'feincms', "django-mptt"]
+    ], requires=["django", 'feincms', "django_mptt"]
 )
