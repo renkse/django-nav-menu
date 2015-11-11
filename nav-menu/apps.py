@@ -9,6 +9,6 @@ else:
     from django.utils.translation import ugettext_lazy as _
 
     class MenuConfig(AppConfig):
-        name = u"menu"
+        name = u"nav-menu"
         label = u"menu"
         verbose_name = _(u"menu")
