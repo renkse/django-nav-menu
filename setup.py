@@ -18,7 +18,7 @@ setup(
     download_url='https://github.com/renkse/django-nav-menu/tarball/0.1.5',
     author='renkse',
     author_email='solomon_art@mail.ru',
-    keywords = ['menu', 'simple', 'header']
+    keywords = ['menu', 'simple', 'header'],
     classifiers=[
 	'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
